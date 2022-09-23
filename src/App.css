@@ -19,3 +19,14 @@ body {
   line-height: 2;
   margin: 0;
 }
+/* GLOBALS */
+img{
+  width: 100%;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+

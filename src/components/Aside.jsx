@@ -2,14 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-const Aside_Container = styled.aside`
-  grid-area: Aside;
+const AsideContainer = styled.aside`
+  width: 360px;
+  height: 100%;
+  align-self: flex-start;
   background-color: red;
 `
 
 const Aside = () => {
   return (
-    <Aside_Container className='Aside'>
+    <AsideContainer className='Aside'>
       <nav>
         <Link to="/">
           <div className='nav-item'>
@@ -30,7 +32,7 @@ const Aside = () => {
           </div>
         </Link>
       </nav>
-    </Aside_Container>
+    </AsideContainer>
   )
 }
 
