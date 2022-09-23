@@ -7,7 +7,6 @@ import VerMapa from './pages/VerMapa';
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
       <BrowserRouter>
         <Routes>
           <Route path='/' exact element = {<VerMapa/>} />

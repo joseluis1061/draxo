@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import styled from '@emotion/styled';
+
+const Container = styled.header`
+  grid-area: Header;
+  background-color: gray;
+`
 
 const Header = () => {
   return (
-    <header>Header</header>
+    <Container className='Header'>
+      Header
+    </Container>
   )
 }
 
