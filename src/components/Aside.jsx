@@ -6,7 +6,6 @@ const AsideContainer = styled.aside`
   width: 360px;
   height: 100%;
   align-self: flex-start;
-  background-color: red;
 `
 
 const Aside = () => {
