@@ -26,7 +26,7 @@ const Imagen = styled.img`
 const TitleContainer = styled.div`
   width: 100%;
   height: 100%;
-  margin-left: 5.5rem;
+  padding-left: 5.5rem;
 `;
 const Title = styled.h1`
   color: var(--black);

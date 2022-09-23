@@ -6,31 +6,53 @@ const AsideContainer = styled.aside`
   width: 360px;
   height: 100%;
   align-self: flex-start;
-`
+  background-color: var(--backgrond-black);
+`;
+const Navegacion = styled.nav`
+  padding-left: 20px;
+  padding-top: 95px;
+`;
+const NavItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  background-color: red;
+`;
+const Icono = styled.i`
+  color: #FFFFFF;
+  background-color: #262626;
+  font-size: 2.5rem;
+  padding: 10px 10px;
+  border-radius: 50% 50%;
+`;
+const Descipcion = styled.p`
+  
+`;
 
 const Aside = () => {
   return (
     <AsideContainer className='Aside'>
-      <nav>
+      <Navegacion>
         <Link to="/">
-          <div className='nav-item'>
-            <i className="fa-solid fa-location-pin"></i>
-            <p>Ver Mapas</p>
-          </div>
+          <NavItem className='nav-item'>
+            <Icono className="fa-solid fa-location-pin"></Icono>
+            <Descipcion>Ver Mapas</Descipcion>
+          </NavItem>
         </Link>
         <Link to="/listas">
-          <div className='nav-item'>
-            <i className="fa-solid fa-layer-group"></i>
-            <p>Lista de Casas</p>
-          </div>
+          <NavItem className='nav-item'>
+            <Icono className="fa-solid fa-layer-group"></Icono>
+            <Descipcion>Lista de Casas</Descipcion>
+          </NavItem>
         </Link>
         <Link to="/acerca">
-          <div className='nav-item'>
-            <i className="fa-solid fa-list"></i>
-            <p>Acerca De</p>
-          </div>
+          <NavItem className='nav-item'>
+            <Icono className="fa-solid fa-list"></Icono>
+            <Descipcion>Acerca De</Descipcion>
+          </NavItem>
         </Link>
-      </nav>
+      </Navegacion>
     </AsideContainer>
   )
 }
