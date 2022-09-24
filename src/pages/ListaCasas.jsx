@@ -9,7 +9,7 @@ const Page = styled.div`
   padding: 60px 0 60px 80px;
 `
 const ListaContainer = styled.div`
-  width: 95%;  
+  width: 90%;  
   height: 100%;
   overflow-y: scroll;
 `;

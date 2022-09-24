@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 import ImageHouse from '../assets/image/draxoH1.jpg';
 
 const CardHouse = styled.div`
@@ -8,6 +9,7 @@ const CardHouse = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
 `;
 const HouseId = styled.h2`
   width: 100%;
@@ -34,14 +36,14 @@ const CardInfo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 25px;
 `;
 const CardText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 5px;
+  gap: 25px;
 `;
 const Parrafo = styled.p`
   margin: 0;  
@@ -49,6 +51,8 @@ const Parrafo = styled.p`
 const ButtonVer = styled.a`
   margin-right: 15px;
   text-decoration: underline;
+  color: var(--black);
+  cursor: pointer;
 `;
 
 const Card = () => {
@@ -64,8 +68,9 @@ const Card = () => {
             <Parrafo>No.454, Aquino Dúplex 1937-1937</Parrafo>
             <Parrafo>2430 Leavenworth Street, San Francisco, California, EEUU</Parrafo>
           </CardText>
-
-          <ButtonVer>Ver</ButtonVer>
+          <Link to="/">
+            <ButtonVer>Ver</ButtonVer>
+          </Link>
         </CardInfo>
       </CardContainer>
 
