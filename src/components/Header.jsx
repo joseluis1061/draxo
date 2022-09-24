@@ -28,7 +28,8 @@ const TitleContainer = styled.div`
   height: 100%;
   padding-left: 5.5rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 `;
 const Title = styled.h1`
   color: var(--black);
