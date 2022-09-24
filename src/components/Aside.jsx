@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from "@emotion/styled/macro";
 const AsideContainer = styled.aside`
-  width: auto;
+  width: 100%;
   max-width: 360px;
   height: 100%;
   align-self: flex-start;

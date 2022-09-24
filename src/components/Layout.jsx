@@ -4,7 +4,7 @@ import Aside from './Aside';
 import styled from '@emotion/styled';
 
 const LayoutContainer = styled.div`
-  max-width: 100%;
+  width: 100%;
   max-height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +14,7 @@ const LayoutContainer = styled.div`
 const MainContainer = styled.main`
   width: 100%;
   display: grid;
-  grid-template-columns: 360px auto;
+  grid-template-columns: minmax(max-content, 360px)  minmax(70%, max-content);
   grid-template-rows: calc(100vh - 95px);
   background-color: pink;
 `;
