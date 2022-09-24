@@ -7,26 +7,28 @@ const ContainerHeader = styled.header`
   width: 100%;
   height: 95px;
   display: grid;
-  grid-template-columns: 360px auto;
+  grid-template-columns: minmax(max-content, 360px)  minmax(70%, max-content);
   grid-template-rows: 95px;
   align-items: center;
 `;
 const Logo = styled.figure`
-  width: 360px;
+  width: 100%;
   height: 100%;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 `;
 const Imagen = styled.img`
-  position: absolute;
-  width: 200px;
-  height: 68px;
-  left: 68px;
-  top: 13px;
+  width: 100%;
+  max-width: 200px;
 `;
 const TitleContainer = styled.div`
   width: 100%;
   height: 100%;
   padding-left: 5.5rem;
+  display: flex;
+  align-items: center;
 `;
 const Title = styled.h1`
   color: var(--black);
