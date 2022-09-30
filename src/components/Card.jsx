@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import ImageHouse from '../assets/image/draxoH1.jpg';
 
 const CardHouse = styled.div`
   width: 100%;
@@ -18,6 +17,7 @@ const HouseId = styled.h2`
   font-size: 1.8rem; 
 `;
 const CardContainer = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,10 +26,15 @@ const CardContainer = styled.div`
 const Figura = styled.figure`
   margin: 0;
   width: 30%;  
+  max-height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const Imagen = styled.img`
-  display: block;
   width: 100%;  
+  object-fit: cover;
 `;
 const CardInfo = styled.div`
   width: 70%;
@@ -39,6 +44,7 @@ const CardInfo = styled.div`
   gap: 25px;
 `;
 const CardText = styled.div`
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,33 +54,39 @@ const CardText = styled.div`
 const Parrafo = styled.p`
   margin: 0;  
 `;
-const ButtonVer = styled.a`
+const ButtonVer = styled.span`
   margin-right: 15px;
   text-decoration: underline;
   color: var(--black);
   cursor: pointer;
 `;
 
-const Card = () => {
+const Card = ({casa,data}) => {
   return (
-    <CardHouse>
-      <HouseId>A</HouseId>
-      <CardContainer>
-        <Figura>
-          <Imagen src={ImageHouse} alt="House"/>
-        </Figura>
-        <CardInfo>
-          <CardText>
-            <Parrafo>No.454, Aquino Dúplex 1937-1937</Parrafo>
-            <Parrafo>2430 Leavenworth Street, San Francisco, California, EEUU</Parrafo>
-          </CardText>
-          <Link to="/">
-            <ButtonVer>Ver</ButtonVer>
-          </Link>
-        </CardInfo>
-      </CardContainer>
+    <>
+    {
+      data?.id &&
+      <CardHouse>
+        <HouseId>{casa}</HouseId>
+        <CardContainer>
+          <Figura>
+            <Imagen src={data?.url} alt={`House ${data?.name}`}/>
+          </Figura>
 
-    </CardHouse>
+          <CardInfo>
+            <CardText>
+              <Parrafo>No.{data?.number}, , {data?.name} {data?.building_start_date} - {data?.building_end_date}</Parrafo>
+              <Parrafo>{data?.address}</Parrafo>
+            </CardText>
+
+            <Link to="/acerca">
+              <ButtonVer>Ver</ButtonVer>
+            </Link>
+          </CardInfo>
+        </CardContainer>
+      </CardHouse>
+    }
+    </>
   )
 }
 

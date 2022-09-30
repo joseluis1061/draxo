@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from "@emotion/styled/macro";
 const AsideContainer = styled.aside`
   width: 100%;
-  max-width: 360px;
+  /* max-width: 360px; */
   height: 100%;
   align-self: flex-start;
   background-color: var(--backgrond-black);
