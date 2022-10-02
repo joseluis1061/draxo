@@ -5,6 +5,7 @@ import Card from '../components/Card';
 import { useContext } from 'react';
 import HousesContex from '../context/HousesContex';
 import useGetApi from '../hooks/useGetApi';
+import Spinner from '../components/Sppinner';
 const Page = styled.div`
   width: 100%;
   background-color: var(--backgrond-white);
@@ -16,12 +17,11 @@ const ListaContainer = styled.div`
   overflow-y: scroll;
 `;
 
-
 const ListaCasas = () => {
-  const houses = useGetApi();
+  const houses = useGetApi();  
   return (
     <Layout>
-      <Page>
+      <Page>        
         <ListaContainer>
           {houses && houses.length>0?
             houses.map((house)=>{
@@ -31,12 +31,8 @@ const ListaCasas = () => {
                 data = {house[1][0]}
               />
             }):
-            setTimeout(()=>{'Cargando'},2500)
-            
+            <Spinner/>
           }
-          <Card 
-          
-          />
         </ListaContainer>
       </Page>
     </Layout>

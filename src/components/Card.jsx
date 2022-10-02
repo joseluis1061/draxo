@@ -64,8 +64,6 @@ const ButtonVer = styled.span`
 const Card = ({casa,data}) => {
   return (
     <>
-    {
-      data?.id &&
       <CardHouse>
         <HouseId>{casa}</HouseId>
         <CardContainer>
@@ -85,7 +83,6 @@ const Card = ({casa,data}) => {
           </CardInfo>
         </CardContainer>
       </CardHouse>
-    }
     </>
   )
 }

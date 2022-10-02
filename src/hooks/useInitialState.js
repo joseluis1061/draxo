@@ -2,14 +2,13 @@ import React from 'react';
 import { useState } from "react";
 
 const initialState = {
-  houses:[],
   house:[]
 };
 
 
 const useInitialState = () => {
   const [state, setState] = useState({initialState});
-  //Funcion mostrar una sola vivienda
+  //Select only house
   const selectHouse = (payload)=>{
     setState({
       ...state,
