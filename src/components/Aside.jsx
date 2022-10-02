@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from "@emotion/styled/macro";
+import { cx, css } from '@emotion/css'
+
 const AsideContainer = styled.aside`
   width: 100%;
   /* max-width: 360px; */
@@ -8,11 +10,9 @@ const AsideContainer = styled.aside`
   align-self: flex-start;
   background-color: var(--backgrond-black);
 `;
-const Navegacion = styled.nav`
-  padding-left: 20px;
-  padding-top: 95px;
-`;
+
 const SpanIcon = styled.span`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,6 +21,20 @@ const SpanIcon = styled.span`
   background-color: var(--background-gray);  
   border-radius: 50% 50%;
 `;
+
+const Line = css`
+  ::after{
+      content: "";
+      position: absolute;
+      background-color: #262626;
+      display: block;
+      top:45px;
+      left: 50%;
+      height: 30px;
+      margin-right: 15px;
+      width: 4px;    
+    }
+`
 const Icono = styled.i`
   color: #FFFFFF;
   background-color: #262626;
@@ -53,13 +67,17 @@ const NavItem = styled.div`
     }
   }
 `;
+const Navegacion = styled.nav`
+  padding-left: 20px;
+  padding-top: 95px;
+`;
 const Aside = () => {
   return (
     <AsideContainer className='Aside'>
       <Navegacion>
         <Link to="/">
           <NavItem className='nav-item'>
-            <SpanIcon>
+            <SpanIcon className={cx(Line)}>
               <Icono className="fa-solid fa-location-pin"></Icono>
             </SpanIcon>
             <Descipcion>Ver Mapas</Descipcion>
@@ -67,7 +85,7 @@ const Aside = () => {
         </Link>
         <Link to="/listas">
           <NavItem className='nav-item'>
-            <SpanIcon>
+            <SpanIcon className={cx(Line)}>
               <Icono className="fa-solid fa-layer-group"></Icono>
             </SpanIcon>
            
