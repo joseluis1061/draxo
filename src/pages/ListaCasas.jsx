@@ -4,12 +4,12 @@ import styled from '@emotion/styled';
 import Card from '../components/Card';
 import { useContext } from 'react';
 import HousesContex from '../context/HousesContex';
-import useGetApi from '../hooks/useGetApi';
 import Spinner from '../components/Sppinner';
 const Page = styled.div`
   width: 100%;
   background-color: var(--backgrond-white);
-  padding: 60px 0 60px 80px;
+  padding: 60px 60px 60px 80px;
+
 `
 const ListaContainer = styled.div`
   width: 90%;  
