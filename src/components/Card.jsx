@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import HousesContex from '../context/HousesContex';
 
 const CardHouse = styled.div`
   width: 100%;
@@ -61,29 +63,35 @@ const ButtonVer = styled.span`
   cursor: pointer;
 `;
 
-const Card = ({casa,data}) => {
+const Card = ({ casa, data }) => {
+  const {selectHouse} = useContext(HousesContex);
+  //console.log(house);
+  const handleClick = (id)=>{
+    selectHouse(id);
+  }
   return (
-    <>
-      <CardHouse>
-        <HouseId>{casa}</HouseId>
-        <CardContainer>
-          <Figura>
-            <Imagen src={data?.url} alt={`House ${data?.name}`}/>
-          </Figura>
+    <CardHouse>
+      <HouseId>{casa}</HouseId>
+      <CardContainer>
+        <Figura>
+          <Imagen src={data?.url} alt={`House ${data?.name}`}/>
+        </Figura>
 
-          <CardInfo>
-            <CardText>
-              <Parrafo>No.{data?.number}, , {data?.name} {data?.building_start_date} - {data?.building_end_date}</Parrafo>
-              <Parrafo>{data?.address}</Parrafo>
-            </CardText>
+        <CardInfo>
+          <CardText>
+            <Parrafo>No.{data?.number}, , {data?.name} {data?.building_start_date} - {data?.building_end_date}</Parrafo>
+            <Parrafo>{data?.address}</Parrafo>
+          </CardText>
 
-            <Link to="/acerca">
-              <ButtonVer>Ver</ButtonVer>
-            </Link>
-          </CardInfo>
-        </CardContainer>
-      </CardHouse>
-    </>
+          <Link to="/acerca">
+            <ButtonVer
+              onClick={()=> handleClick(data?.id)}
+            >Ver</ButtonVer>
+          </Link>
+        </CardInfo>
+      </CardContainer>
+    </CardHouse>
+    
   )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from "react";
+import useGetApi from "./useGetApi"
 
 const initialState = {
-  house:[]
+  houses:useGetApi.house
 };
 
 

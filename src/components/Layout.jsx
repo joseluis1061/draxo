@@ -17,9 +17,7 @@ const MainContainer = styled.main`
   /* grid-template-columns: minmax(max-content, 380px)  minmax(70%, max-content); */
   /* grid-template-columns: 380px  minmax(100%, max-content); */
   grid-template-columns: 380px  1fr;
-
   grid-template-rows: calc(100vh - 95px);
-  background-color: pink;
 `;
 
 const Layout = ({children}) => {

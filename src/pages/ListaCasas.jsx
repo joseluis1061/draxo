@@ -18,7 +18,8 @@ const ListaContainer = styled.div`
 `;
 
 const ListaCasas = () => {
-  const houses = useGetApi();  
+  //const houses = useGetApi();  
+  const {houses} = useContext(HousesContex);
   return (
     <Layout>
       <Page>        

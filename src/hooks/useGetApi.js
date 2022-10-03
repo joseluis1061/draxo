@@ -4,6 +4,7 @@ import axios from "axios";
 const API ="https://modern-houses-api-production.herokuapp.com/api/v1/houses/California?city=San%20Francisco";
 const useGetApi = () => {
   const [houses, setHouses] = useState([]);
+  const [house, setHouse] = useState([]);
 
   useEffect(() => {
     const getHouses = async () => {
@@ -23,7 +24,16 @@ const useGetApi = () => {
       return newHouse;
     },{});
   }
+  //Seleccionar una sola casa
+  const selectHouse = id =>{
+    const onlyHouse = houses.filter(house=> house[1][0].id === id);
+    setHouse(onlyHouse);    
+  };
   
-  return houses;
+  return {
+    houses,
+    house,
+    selectHouse
+  };
 };
 export default useGetApi;
